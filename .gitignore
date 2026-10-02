@@ -1,0 +1,8 @@
+**/bin/
+**/obj/
+.dotnet/
+**/.dotnet/
+.DS_Store
+**/.DS_Store
+.vscode/
+**/~$*.docx
