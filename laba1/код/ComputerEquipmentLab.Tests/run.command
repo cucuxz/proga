@@ -14,12 +14,15 @@ if [ -z "$dotnet_exe" ] || [ ! -x "$dotnet_exe" ]; then
 fi
 export DOTNET_CLI_HOME="$semester_dir/.dotnet/cli"
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+export NUGET_PACKAGES="$semester_dir/.dotnet/packages"
 export DOTNET_GENERATE_ASPNET_CERTIFICATE=false
 cd "$project_dir" || exit 1
-"$dotnet_exe" run --project "$project_dir/ComputerEquipmentLab.Tests.csproj" --configuration Release --disable-build-servers -p:UseSharedCompilation=false -- "$@"
+"$dotnet_exe" test "$project_dir/ComputerEquipmentLab.Tests.csproj" --configuration Release --disable-build-servers -p:UseSharedCompilation=false --logger "console;verbosity=normal" --logger "trx;LogFileName=tests.trx" --logger "html;LogFileName=tests.html" --results-directory "$project_dir/../../результаты тестов" "$@"
 result=$?
 if [ "$result" -ne 0 ]; then
     printf '\nПрограмма завершилась с ошибкой. Проверьте сообщение выше.\n'
-    read -r -p 'Нажмите Enter, чтобы закрыть окно… ' _
+fi
+if [ -t 0 ]; then
+    read -r -p "Нажмите Enter, чтобы закрыть окно… " _
 fi
 exit "$result"
