@@ -170,7 +170,7 @@ public class FileEntry
 
 // 3. Commander сортирует записи и рисует интерфейс средствами Console.
 // Палитра Norton: синие панели, голубые рамки, жёлтые заголовки.
-// На Mac профиль «Запустить.terminal» задаёт точные оттенки этих ConsoleColor.
+// На Mac и в VS Code оттенки закреплены в WriteAt, чтобы тема их не меняла.
 public class Commander
 {
     public const int Width = 80, Height = 25, FileRows = 17, NameWidth = 12;
@@ -334,6 +334,14 @@ public class Commander
         Console.SetCursorPosition(x, y);
         Console.ForegroundColor = foreground;
         Console.BackgroundColor = background;
+        if (!OperatingSystem.IsWindows())
+        {
+            // Номера стандартной палитры 256 цветов не зависят от темы терминала.
+            int[] colors = { 16, 19, 34, 37, 124, 127, 136, 250,
+                244, 63, 83, 87, 203, 207, 226, 231 };
+            Console.Write($"\u001b[38;5;{colors[(int)foreground]};" +
+                $"48;5;{colors[(int)background]}m");
+        }
         Console.Write(text);
     }
 }

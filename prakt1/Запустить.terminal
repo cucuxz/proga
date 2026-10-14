@@ -149,7 +149,7 @@
 	oKmssbMAAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAAuA==
 	</data>
 	<key>CommandString</key>
-	<string>/bin/bash "$HOME/учеба/proga 2 sem/prakt1/код/NortonCommanderConsole/run.command"</string>
+	<string>exec /bin/bash "$HOME/учеба/proga 2 sem/prakt1/код/NortonCommanderConsole/run.command"</string>
 	<key>CursorColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRhZJGFyY2hpdmVyWCRvYmplY3RzVCR0b3BYJHZlcnNpb25f
@@ -175,7 +175,7 @@
 	<key>FontWidthSpacing</key>
 	<real>1.0</real>
 	<key>RunCommandAsShell</key>
-	<true/>
+	<false/>
 	<key>SelectionColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRhZJGFyY2hpdmVyWCRvYmplY3RzVCR0b3BYJHZlcnNpb25f
