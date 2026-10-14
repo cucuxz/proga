@@ -169,6 +169,8 @@ public class FileEntry
 }
 
 // 3. Commander сортирует записи и рисует интерфейс средствами Console.
+// Палитра Norton: синие панели, голубые рамки, жёлтые заголовки.
+// На Mac профиль «Запустить.terminal» задаёт точные оттенки этих ConsoleColor.
 public class Commander
 {
     public const int Width = 80, Height = 25, FileRows = 17, NameWidth = 12;
@@ -223,7 +225,7 @@ public class Commander
             WriteAt(positions[i], 0, menu[i].Substring(0, 1),
                 ConsoleColor.Yellow, ConsoleColor.DarkCyan);
         }
-        WriteAt(75, 0, "08:30", ConsoleColor.Black, ConsoleColor.Cyan);
+        WriteAt(75, 0, "08:30", ConsoleColor.DarkBlue, ConsoleColor.Cyan);
         Frame( 0, new[] { 13, 26 });
         Frame( 40, new[] { 13, 23, 32 });
         WriteAt(1, 2, "C:↓ Имя", ConsoleColor.Yellow);
@@ -250,7 +252,7 @@ public class Commander
             // Первую строку выделяем фоном, как в Norton Commander.
             ConsoleColor bg = i == 0
                 ? ConsoleColor.Cyan : ConsoleColor.DarkBlue;
-            ConsoleColor fg = i == 0 ? ConsoleColor.Black : FileColor(file);
+            ConsoleColor fg = i == 0 ? ConsoleColor.DarkBlue : FileColor(file);
             if (i == 0)
             {
                 // Выделение занимает всю строку, включая разделители.
@@ -313,7 +315,7 @@ public class Commander
         WriteAt(x + 15, 1, @" C:\NC ");
         if (x == 40)
             WriteAt(x + 15, 1, @" C:\NC ",
-                ConsoleColor.Black, ConsoleColor.Cyan);
+                ConsoleColor.DarkBlue, ConsoleColor.Cyan);
     }
 
     private void WriteAt(int x, int y, string text,
