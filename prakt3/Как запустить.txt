@@ -1,0 +1,20 @@
+Практическая работа №3, вариант 1. Stack<char> → List<char>.
+
+На Mac: дважды нажмите «Запустить.command».
+В меню выберите один из четырёх пунктов или 5 для всех примеров.
+Для модульных тестов: «Проверить тесты.command».
+
+Для кнопки ▶ в VS Code:
+1. File → Open Workspace from File → «Практика_3.code-workspace».
+2. Откройте Program.cs.
+3. В Run and Debug выберите «Практика 3 — вариант 1» и нажмите ▶ или F5.
+Настройки уже добавлены. Нужно расширение C# от Microsoft.
+
+При установленном .NET SDK 8 из папки «код»:
+dotnet run --project CollectionsPractice/CollectionsPractice.csproj
+dotnet test CollectionsPractice.sln
+Готовая демонстрация без ввода: добавьте к запуску -- --demo.
+
+Основная программа и все её классы — в одном Program.cs.
+Tests.cs содержит отдельные модульные тесты MSTest.
+При первом запуске тестов на новом компьютере нужен интернет для NuGet.

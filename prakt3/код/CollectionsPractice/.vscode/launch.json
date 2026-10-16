@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Практика 3 — вариант 1",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "Собрать практику 3",
+      "program": "${workspaceFolder}/bin/Debug/net8.0/CollectionsPractice.dll",
+      "cwd": "${workspaceFolder}",
+      "args": [],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "stopAtEntry": false,
+      "osx": {
+        "env": { "DOTNET_ROOT": "${env:HOME}/учеба/proga 2 sem/.dotnet" }
+      }
+    }
+  ]
+}
