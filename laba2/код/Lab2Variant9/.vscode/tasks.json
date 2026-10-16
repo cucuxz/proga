@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Собрать лабораторную 2",
+      "type": "process",
+      "command": "dotnet",
+      "osx": {
+        "command": "${env:HOME}/учеба/proga 2 sem/.dotnet/dotnet"
+      },
+      "args": [
+        "build", "${workspaceFolder}/Lab2Variant9.csproj", "-c", "Debug",
+        "--disable-build-servers", "-p:UseSharedCompilation=false"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": { "DOTNET_CLI_TELEMETRY_OPTOUT": "1" }
+      },
+      "problemMatcher": "$msCompile",
+      "group": { "kind": "build", "isDefault": true }
+    }
+  ]
+}
